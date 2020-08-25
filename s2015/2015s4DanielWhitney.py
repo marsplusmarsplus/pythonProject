@@ -70,7 +70,7 @@ def push(heap, item):
             node = 0
 
 
-file = open('s4.15.in')
+file = open('s4.14.in')
 K, N, M = map(int, file.readline().split())
 routes = [{} for n in range(N)]
 for m in range(M):
