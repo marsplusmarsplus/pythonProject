@@ -8,7 +8,7 @@ for i in range(k):
 print()
 m = int(file.readline())
 for round in range(m):
-    print("round " + str(round))
+    print("round " + str(round + 1))
     r = int(file.readline())
     newfriends = []
     for i in range(len(friends)):
