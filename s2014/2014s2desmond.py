@@ -1,12 +1,17 @@
-file = open ("s2.5b.in", "r")
-n = int(file.readline())
-first = file.readline().split()
-second = file.readline().split()
-i = 0
-state = "good"
-while i < n and state == "good":
-    position = first.index(second[i])
-    if first[i] != second[position] or position == i:
-        state = "bad"
-    i = i + 1
-print (state)
+file = open("s2.5b.in", "r")
+N = int(file.readline())
+firstArray = []
+firstArray = file.readline().split()
+secondArray = []
+secondArray = file.readline().split()
+resultsArray = []
+for i in range(N):
+    resultsArray.append("good")
+for i in range(N):
+    for j in range(N):
+        if firstArray[i] == secondArray[j] and firstArray[j] != secondArray[i]:
+            resultsArray[i] = "bad"
+        if firstArray[i] == secondArray[j] and i == j:
+            resultsArray[i] = "bad"
+for i in range(N):
+    print(firstArray[i] + " + " + secondArray[i] + " => " + resultsArray[i])
