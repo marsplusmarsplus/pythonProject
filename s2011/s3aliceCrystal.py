@@ -30,9 +30,9 @@
 # then x,y is IN the crystal! ged
 
 
-def crystalSquaresatX(m,x):
+def crystalSquaresatX(m, x):
     if m >= 1:
-        power = 5 ** (m-1)
+        power = 5 ** (m - 1)
         location = x // power
         if location == 0 or location == 4:
             return 0
@@ -47,15 +47,15 @@ def crystalSquaresatX(m,x):
 # file input
 file = open("s3.1.in", 'r')
 T = eval(file.readline())
-for t in range(0,T):
+for t in range(0, T):
     line = (file.readline())
     space = line.find(" ")
     m = eval(line[0:space])
-    line = line[space+1:]
+    line = line[space + 1:]
     space = line.find(" ")
     x = eval(line[0:space])
-    y = eval(line[space+1:])
-    if y < crystalSquaresatX(m,x):
-        print ("crystal")
+    y = eval(line[space + 1:])
+    if y < crystalSquaresatX(m, x):
+        print("crystal")
     else:
-        print ("empty")
+        print("empty")
