@@ -45,7 +45,7 @@ def crystalSquaresatX(m, x):
 
 
 # file input
-file = open("s3.1.in", 'r')
+file = open("s3.5.in", 'r')
 T = eval(file.readline())
 for t in range(0, T):
     line = (file.readline())
