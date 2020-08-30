@@ -10,7 +10,7 @@
 #      then adds 1 to that spot. If spot 10 has been accessed 8 times,
 #            it is known that the previous 8 have been taken.
 
-data = open("s3.10.in")
+data = open("s3.0d.in")
 
 ports = int(data.readline())
 numPlanes = int(data.readline())
