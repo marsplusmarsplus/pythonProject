@@ -21,7 +21,7 @@ for j in range(pow(numPlanes + 1, numGates)):
         gates[i] = temp // pow(numPlanes + 1, i)
         temp = temp - (temp // pow(numPlanes + 1, i)) * pow(numPlanes + 1, i)
     for i in range(numGates):
-        if i > (planesMaxGate[gates[i] - 1]-1):
+        if i > (planesMaxGate[gates[i] - 1] - 1):
             print("x", end="")
         print(str(gates[i]), end=" ")
     print()
