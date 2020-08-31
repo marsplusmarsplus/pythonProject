@@ -1,24 +1,28 @@
-data = open("s3.0d.in")
+data = open("s3.0b.in")
 numGates = int(data.readline().strip())
 numPlanes = int(data.readline().strip())
-print("number of gates = " + str(numGates))
-takenGates = 0
-print("taken gates = " + str(takenGates))
+print("number of gates = " + str(numGates), end="  ")
 gates = []
-gates.append(0)
 for i in range(numGates):
     gates.append(0)
-for i in range(numGates):
-    print("gate " + str(i + 1) + " status = " + str(gates[i + 1]))
-print("number of planes = " + str(numPlanes))
-planes = []
-planes.append(0)
+print("number of planes = " + str(numPlanes), end="  ")
+planesMaxGate = []
 for i in range(numPlanes):
-    planes.append(int(data.readline().strip()))
+    planesMaxGate.append(int(data.readline().strip()))
+print("planes max gate = ", end=" ")
 for i in range(numPlanes):
-    print("plane " + str(i + 1) + " max gate = " + str(planes[i + 1]))
-for gateNum in range(numGates):
-    print(gateNum + 1)
-    for planeNum in range(numPlanes):
-        print(planeNum, end=" ")
+    print(str(planesMaxGate[i]), end=" ")
+print()
+gatesDecimalValue = 0
+for j in range(pow(numPlanes + 1, numGates)):
+    print("gates status = ", end=" ")
+    temp = gatesDecimalValue
+    for i in range(numGates - 1, -1, -1):
+        gates[i] = temp // pow(numPlanes + 1, i)
+        temp = temp - (temp // pow(numPlanes + 1, i)) * pow(numPlanes + 1, i)
+    for i in range(numGates):
+        if i > (planesMaxGate[gates[i] - 1]-1):
+            print("x", end="")
+        print(str(gates[i]), end=" ")
     print()
+    gatesDecimalValue = gatesDecimalValue + 1
