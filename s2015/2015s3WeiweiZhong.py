@@ -61,7 +61,7 @@ def find(x):
 def merge(x,y): 
     root[find(x)] = find(y)
 
-file = open("s3.0d.in")
+file = open("s3.0b.in")
 numGates = int(file.readline())
 numPlanes = int(file.readline())
 for i in range(1,numGates+1):

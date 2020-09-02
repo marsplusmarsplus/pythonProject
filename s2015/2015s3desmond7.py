@@ -1,4 +1,4 @@
-data = open("s3.0b.in")
+data = open("s3.0a.in")
 maxParkedPlanes = 0
 numGates = int(data.readline().strip())
 numPlanes = int(data.readline().strip())
@@ -17,13 +17,15 @@ print()
 gatesDecimalValue = 0
 for j in range(pow(numPlanes + 1, numGates)):  # MAIN LOOP
     temp = gatesDecimalValue
+    void = 0
     for ii in range(numGates - 1, -1, -1):  # park planes in gates
         gates[ii] = temp // pow(numPlanes + 1, ii)
+        if gates[ii] > planesMaxGate[gates[ii] - 1]:
+            void = 111
         temp = temp - (temp // pow(numPlanes + 1, ii)) * pow(numPlanes + 1, ii)
-    void = 0
     for hhh in gates:  # any duplicate planes?
         if gates.count(hhh) > 1 and hhh != 0:
-            void = 1
+            void = 222222
     print("void = " + str(void), end=" ")
     numParkedPlanes = 0
     print("gates status = ", end=" ")
@@ -34,6 +36,6 @@ for j in range(pow(numPlanes + 1, numGates)):  # MAIN LOOP
     print("number of parked planes = " + str(numParkedPlanes))
     if numParkedPlanes > maxParkedPlanes and void == 0:
         maxParkedPlanes = numParkedPlanes
-        print("max number of parked planes = " + str(maxParkedPlanes))
+        print(str(j) + " max number of parked planes = " + str(maxParkedPlanes))
     gatesDecimalValue = gatesDecimalValue + 1
 print("max number of parked planes = " + str(maxParkedPlanes))
