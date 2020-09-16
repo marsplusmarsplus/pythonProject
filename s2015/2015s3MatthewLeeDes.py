@@ -18,15 +18,17 @@ while i < numPlanes and keepGoing:
         t = planes[cPlane]
         planes[cPlane] = planes[cPlane] + 1
         cPlane = cPlane - t
-        print("                        t=" + str(t) + " cPlane=" + str(cPlane)
-              + " planes[" + str(cPlane) + "]=" + str(planes[cPlane]))
+        print("       t=" + str(t) + " cPlane=" + str(cPlane), end=" ")
+        for j in range(gates + 1):
+            planes.append(0)
+            print("planes[" + str(j) + "]=" + str(planes[j]), end=" ")
+        print()
     if cPlane <= 0:
         keepGoing = False
     else:
         planes[cPlane] = 1
         total = total + 1
-        print("    planes[" + str(cPlane) + "]=" + str(planes[cPlane])
-              + " total=" + str(total))
+        print("    planes[" + str(cPlane) + "]=" + str(planes[cPlane]) + " total=" + str(total))
     i = i + 1
     print("i=" + str(i))
 print(total)
