@@ -17,21 +17,35 @@ public class Level1a
             char charR='R';
             char charS='S';
             for(i = 0; i <str.length(); i=i+3) {  
-                if(rps[i]==rps[i+1]) 
+                if(rps[i]==rps[i+1]) {
                     ties++;
-                if(rps[i]==charP && rps[i+1]==charR) 
+                    System.out.print("Tie for ");
+                }
+                if(rps[i]==charP && rps[i+1]==charR) {
                     oneScore++;
-                if(rps[i]==charR && rps[i+1]==charS) 
+                    System.out.print("One wins ");
+                }
+                if(rps[i]==charR && rps[i+1]==charS) {
                     oneScore++;
-                if(rps[i]==charS && rps[i+1]==charP) 
+                    System.out.print("One wins ");
+                }
+                if(rps[i]==charS && rps[i+1]==charP) {
                     oneScore++;
-                if(rps[i]==charP && rps[i+1]==charS) 
+                    System.out.print("One wins ");
+                }
+                if(rps[i]==charP && rps[i+1]==charS) {
                     twoScore++;
-                if(rps[i]==charS && rps[i+1]==charR) 
+                    System.out.print("Two wins ");
+                }
+                if(rps[i]==charS && rps[i+1]==charR) {
                     twoScore++;
-                if(rps[i]==charR && rps[i+1]==charP) 
+                    System.out.print("Two wins ");
+                }
+                if(rps[i]==charR && rps[i+1]==charP) {
                     twoScore++;
-                System.out.println("round "+(i/3+1)+" score is "+oneScore+" - "+twoScore);
+                    System.out.print("Two wins ");
+                }
+                System.out.println("Round "+(i/3+1)+" Score is "+oneScore+" - "+twoScore);
                 if (twoScore==2 && !winner){
                     winner=true;
                     winnerIs="TWO";                
