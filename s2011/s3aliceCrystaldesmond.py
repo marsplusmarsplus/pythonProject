@@ -1,24 +1,24 @@
 def hasCrystal(M, X, Y):
     if M == 1:
         if X == 1 and Y == 0:
-            return "*"
+            return "T"
         elif X == 2 and Y == 0:
-            return "*"
+            return "T"
         elif X == 3 and Y == 0:
-            return "*"
+            return "T"
         elif X == 2 and Y == 1:
-            return "*"
+            return "T"
         else:
             return "_"
     else:
         if X // pow(5, M - 1) == 1 and Y // pow(5, M - 1) == 0:
-            return "*"
+            return "T"
         elif X // pow(5, M - 1) == 2 and Y // pow(5, M - 1) == 0:
-            return "*"
+            return "T"
         elif X // pow(5, M - 1) == 3 and Y // pow(5, M - 1) == 0:
-            return "*"
+            return "T"
         elif X // pow(5, M - 1) == 2 and Y // pow(5, M - 1) == 1:
-            return "*"
+            return "T"
         elif X // pow(5, M - 1) == 1 and Y // pow(5, M - 1) == 1:
             return hasCrystal(M - 1, X % pow(5, M - 1), Y % pow(5, M - 1))
         elif X // pow(5, M - 1) == 3 and Y // pow(5, M - 1) == 1:
